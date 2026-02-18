@@ -20,3 +20,8 @@ Feature: To-Do List Management
         Given I am on the home page
         When I try to add a task without a title
         Then I should see an error message
+
+    Scenario: Add a task with duplicate title
+        Given I have a task "my task 1" in the to-do list
+        When I add a new task with the title "my task 1"
+        Then I should see two tasks named "my task 1"
